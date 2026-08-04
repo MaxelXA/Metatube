@@ -2,7 +2,7 @@
 
 **TubeMeta** is a free, 100% client-side web tool that lets you instantly analyze any YouTube video URL to extract public metadata and download high-resolution thumbnails. No API keys, no signups, no server — everything runs directly in your browser.
 
-🔗 **[Live Demo →](https://tubemeta.netlify.app/)**
+🔗 **[Live Demo →](https://analyzertub.netlify.app/)**
 
 ---
 
