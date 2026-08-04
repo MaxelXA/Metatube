@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>About TubeMeta | YouTube Metadata & Thumbnail Hub</title>
+  <meta name="description" content="TubeMeta helps creators, editors, and researchers quickly access public YouTube metadata and thumbnails. Learn about our 100% client-side, privacy-focused technology.">
+  <meta name="keywords" content="about tubemeta, youtube metadata viewer, client-side oembed, youtube tools">
+  <meta name="author" content="TubeMeta">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tubemeta.netlify.app/about.html">
+  <meta property="og:title" content="About TubeMeta | YouTube Metadata & Thumbnail Hub">
+  <meta property="og:description" content="Learn about TubeMeta's secure, client-side oEmbed analyzer, designed for creators, editors, and researchers.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-play"></i></div>
+        <span>TubeMeta</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Analyzer</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="blog/index.html" class="nav-link">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Header -->
+  <div class="static-page-header">
+    <div class="container">
+      <h1>About TubeMeta</h1>
+      <p>Empowering digital creators, editors, and researchers with instantaneous metadata lookup and image extraction.</p>
+    </div>
+  </div>
+
+  <!-- About Content -->
+  <main class="container">
+    <article class="static-content-card rich-text">
+      <h2>Our Mission</h2>
+      <p>
+        <strong>TubeMeta</strong> is a high-performance utility designed to help content creators, video editors, and media researchers inspect public video metadata and download YouTube thumbnail images at various resolutions. Our goal is to make digital research and visual creation as efficient as possible.
+      </p>
+      
+      <h2>100% Client-Side Architecture</h2>
+      <p>
+        Unlike other tools that route requests through external servers, TubeMeta is built on a <strong>100% client-side framework</strong>. 
+        Everything runs locally in your web browser:
+      </p>
+      <ul>
+        <li><strong>No Server:</strong> We do not operate databases or backend processors, ensuring zero server costs and permanent free access.</li>
+        <li><strong>No API Keys:</strong> You do not need to register a Google Developer account or provision expensive cloud credentials.</li>
+        <li><strong>Privacy Safeguarded:</strong> Your search URLs, analyzed history, and downloaded thumbnails are processed completely in your local browser sandbox.</li>
+      </ul>
+
+      <h2>Official oEmbed Integration</h2>
+      <p>
+        TubeMeta queries YouTube's official, CORS-compliant oEmbed API endpoint to securely obtain standard video titles, publisher details, and base configurations. We strictly adhere to Google API Guidelines and never engage in aggressive web scraping, video bypassing, or content downloads. All retrieved data is public, non-authenticated information.
+      </p>
+
+      <h2>Core Features At a Glance</h2>
+      <ul>
+        <li><strong>Smart Link Parsing:</strong> Support for mobile URLs, YouTube Shorts, Live streams, Embedded IFrames, and complex query strings.</li>
+        <li><strong>UHD Image Fetcher:</strong> Instant previewing and extraction of multiple thumbnail formats including 1280x720 (Maximum HD) and Standard qualities.</li>
+        <li><strong>Graceful 404 Testing:</strong> Automated image dimension verification to omit broken images when max-res thumbnails are unavailable on older files.</li>
+        <li><strong>Analysis History:</strong> Secure caching of the last 15 queries to allow quick, one-click re-fetching.</li>
+      </ul>
+
+      <h2 id="contact">Get in Touch</h2>
+      <p>
+        Have ideas to improve TubeMeta, bug reports, or feature requests? Fill out the secure form below to send a message directly to our team.
+      </p>
+      
+      <form
+        action="https://formspree.io/f/xnjrzybp"
+        method="POST"
+        class="contact-form"
+      >
+        <div class="form-group">
+          <label for="contact-email">Your Email Address</label>
+          <input type="email" id="contact-email" name="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Your Message</label>
+          <textarea id="contact-message" name="message" class="form-control" placeholder="Write your message details here..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit-btn">
+          <span>Send Message</span>
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </article>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: 0.75rem;">
+            <div class="logo-icon"><i class="fa-solid fa-play"></i></div>
+            <span>TubeMeta</span>
+          </a>
+          <p>The premium, secure client-side utility for video metadata aggregation and ultra-high-definition thumbnail extraction.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Analyzer Tool</a></li>
+            <li><a href="about.html" class="footer-link">About TubeMeta</a></li>
+            <li><a href="blog/index.html" class="footer-link">Educational Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Legal &amp; Support</h4>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="about.html#contact" class="footer-link">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TubeMeta. All rights reserved. Not affiliated with YouTube or Google LLC.</p>
+        <p>100% Client-Side Metadata Reader</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

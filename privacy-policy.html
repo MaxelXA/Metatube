@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Privacy Policy | TubeMeta</title>
+  <meta name="description" content="Read TubeMeta's Privacy Policy. Understand how we utilize client-side localStorage, oEmbed queries, and ad cookies while offering 100% serverless operations.">
+  <meta name="keywords" content="privacy policy, tubemeta privacy, secure youtube tools">
+  <meta name="author" content="TubeMeta">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tubemeta.netlify.app/privacy-policy.html">
+  <meta property="og:title" content="Privacy Policy | TubeMeta">
+  <meta property="og:description" content="TubeMeta operates completely in your browser. We never collect or store your inputs. Read our privacy policy.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-play"></i></div>
+        <span>TubeMeta</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Analyzer</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog/index.html" class="nav-link">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Privacy Header -->
+  <div class="static-page-header">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>Your privacy is our priority. Discover how we protect your inputs with 100% client-side technologies.</p>
+    </div>
+  </div>
+
+  <!-- Privacy Content -->
+  <main class="container">
+    <article class="static-content-card rich-text">
+      <h2>Effective Date: May 23, 2026</h2>
+      <p>
+        At TubeMeta, we respect your personal space and privacy. This Privacy Policy details our technical structure and informs you about the minimal interactions between our tool, external APIs, and your local device.
+      </p>
+      
+      <h2>1. 100% Serverless Environment</h2>
+      <p>
+        TubeMeta is a statically hosted, single-page application. We do not maintain any web servers, user database clusters, or analytical tracking logs. When you input a YouTube link, the data is processed solely by your browser. We never compile, transmit, or monetize your search queries.
+      </p>
+
+      <h2>2. Official oEmbed API Invocations</h2>
+      <p>
+        To fetch public video metadata (such as titles, author names, and thumbnail links), TubeMeta triggers a standard request from your browser directly to YouTube's public oEmbed API endpoint:
+        <code>https://www.youtube.com/oembed?url={videoUrl}&format=json</code>.
+      </p>
+      <p>
+        This request is executed directly between your device's browser and YouTube's network. Consequently, your interactions are subject to Google's standard Privacy Policy and terms. No intermediate servers route or access these requests.
+      </p>
+
+      <h2>3. Local Storage for Quick History</h2>
+      <p>
+        We offer a "Recent Analysis History" feature. To provide this utility without a user sign-up or backend database, we store the metadata of your last 15 analyzed videos in your browser's <code>localStorage</code> object.
+      </p>
+      <ul>
+        <li>This storage remains entirely on your local machine.</li>
+        <li>No data is uploaded to our static host.</li>
+        <li>You can empty this history at any time by clicking the "Clear History" button in the app.</li>
+      </ul>
+
+      <h2>4. No Media Downloads Offered</h2>
+      <p>
+        TubeMeta does not extract, download, scrape, or stream YouTube videos or audios. We only fetch public metadata and standard, static thumbnail files hosted on official YouTube CDN servers (such as <code>img.youtube.com</code>). 
+      </p>
+
+      <h2>5. Cookies and Advertisement Frameworks</h2>
+      <p>
+        TubeMeta integrates standard, non-intrusive HTML comment placements to accommodate monetization networks like Google AdSense (e.g., <code>&lt;!-- ADSENSE_ZONE_TOP --&gt;</code>). 
+      </p>
+      <p>
+        Monetization services and Google Analytics partners may set tracking cookies on your device to display contextual advertisements and compile aggregate traffic patterns. You can disable cookie preferences in your browser configurations or utilize private windows to prevent tracker caching.
+      </p>
+
+      <h2>6. Modifications and contact</h2>
+      <p>
+        We may update this policy periodically to align with evolving browser sandboxing features and Google API guidelines. If you have questions regarding our browser-native operations, please reach out to <a href="mailto:privacy@tubemeta.example.com">privacy@tubemeta.example.com</a>.
+      </p>
+    </article>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: 0.75rem;">
+            <div class="logo-icon"><i class="fa-solid fa-play"></i></div>
+            <span>TubeMeta</span>
+          </a>
+          <p>The premium, secure client-side utility for video metadata aggregation and ultra-high-definition thumbnail extraction.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Analyzer Tool</a></li>
+            <li><a href="about.html" class="footer-link">About TubeMeta</a></li>
+            <li><a href="blog/index.html" class="footer-link">Educational Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Legal &amp; Support</h4>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="about.html#contact" class="footer-link">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TubeMeta. All rights reserved. Not affiliated with YouTube or Google LLC.</p>
+        <p>100% Client-Side Metadata Reader</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

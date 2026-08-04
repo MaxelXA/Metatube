@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Metadata -->
+  <title>YouTube Thumbnail Downloader & Metadata Viewer | Free, No API Key</title>
+  <meta name="description" content="Free YouTube metadata and thumbnail analyzer. Get HD thumbnails, titles, descriptions, and channel info instantly. No signup, no server, 100% client-side.">
+  <meta name="keywords" content="youtube thumbnail downloader, youtube metadata analyzer, get youtube description, oembed metadata viewer, free youtube tool, client side yt tools">
+  <meta name="author" content="TubeMeta">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tubemeta.netlify.app/">
+  <meta property="og:title" content="YouTube Thumbnail Downloader & Metadata Viewer | Free, No API Key">
+  <meta property="og:description" content="Free YouTube metadata and thumbnail analyzer. Get HD thumbnails, titles, descriptions, and channel info instantly. No signup, no server, 100% client-side.">
+  <meta property="og:image" content="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://tubemeta.netlify.app/">
+  <meta property="twitter:title" content="YouTube Thumbnail Downloader & Metadata Viewer | Free, No API Key">
+  <meta property="twitter:description" content="Free YouTube metadata and thumbnail analyzer. Get HD thumbnails, titles, descriptions, and channel info instantly. No signup, no server, 100% client-side.">
+  <meta property="twitter:image" content="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📺</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- JSON-LD SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TubeMeta",
+    "operatingSystem": "All",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "description": "Free YouTube metadata and thumbnail analyzer. Get HD thumbnails, titles, descriptions, and channel info instantly. No signup, no server, 100% client-side.",
+    "browserRequirements": "Requires JavaScript. Requires HTML5."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-play"></i></div>
+        <span>TubeMeta</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Analyzer</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog/index.html" class="nav-link">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero">
+      <h1>Analyze & Download YouTube Video <span>Metadata & Thumbnails</span></h1>
+      <p>Get instant access to ultra-high-resolution thumbnails, precise video details, and quick stats. 100% client-side, completely free, no API keys required.</p>
+    </section>
+
+    <!-- Search / Input Section -->
+    <div class="search-wrapper">
+      <form id="analyzer-form">
+        <div class="search-box">
+          <div class="search-input-wrapper">
+            <i class="fa-brands fa-youtube"></i>
+            <input type="text" id="youtube-url" class="search-input" placeholder="Paste any YouTube URL (e.g. watch?v=..., shorts/..., youtu.be/...)" required autocomplete="off">
+          </div>
+          <button type="submit" class="search-btn">
+            <span>Analyze</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ADSENSE_ZONE_TOP -->
+    <div class="adsense-zone">
+      <a href="https://www.effectivecpmnetwork.com/dc0txqeg?key=c130cc04a60f3b3f0b9a6837fa4003c2" target="_blank" rel="noopener sponsored" class="banner-ad-card">
+        <span class="banner-ad-tag">ADVERTISEMENT</span>
+        <span class="banner-ad-subtitle">SPONSORED ADVERTISEMENT</span>
+        <span class="banner-ad-title">
+          NEED HEAVY YOUTUBE TASKS? TRY HIGH-SPEED CLOUD CONVERTER
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </a>
+    </div>
+
+    <!-- Error Banner -->
+    <div id="error-banner" class="alert alert-danger hidden">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <div id="error-message">Invalid YouTube URL. Please try again with a valid video URL.</div>
+    </div>
+
+    <!-- Loading Skeleton (hidden by default) -->
+    <div id="skeleton-screen" class="dashboard-grid hidden">
+      <!-- Skeleton Metadata Card -->
+      <div class="video-card skeleton-card">
+        <div class="skeleton skeleton-img"></div>
+        <div class="video-info-body">
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text medium"></div>
+          <div class="skeleton skeleton-text short" style="margin-top: 1rem;"></div>
+        </div>
+      </div>
+      <!-- Skeleton Thumbnails -->
+      <div class="thumbnails-suite">
+        <div class="skeleton skeleton-text short" style="height: 1.5rem; margin-bottom: 2rem;"></div>
+        <div class="thumbnail-grid">
+          <div class="thumbnail-card" style="border: none;">
+            <div class="skeleton skeleton-img"></div>
+          </div>
+          <div class="thumbnail-card" style="border: none;">
+            <div class="skeleton skeleton-img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Content Output (hidden by default) -->
+    <div id="dashboard-content" class="dashboard-grid hidden">
+      
+      <!-- Video Info Card -->
+      <section class="video-card" aria-label="Video Information">
+        <div class="video-preview-wrapper">
+          <img id="video-card-preview" src="" alt="Video thumbnail preview" class="video-preview-img">
+          <div class="video-play-overlay">
+            <a id="video-play-link" href="" target="_blank" class="play-btn-circle" title="Watch on YouTube">
+              <i class="fa-solid fa-play"></i>
+            </a>
+          </div>
+        </div>
+        <div class="video-info-body">
+          <h2 id="video-title" class="video-title">Video Title Placeholder</h2>
+          <div class="video-channel">
+            <i class="fa-solid fa-circle-user"></i>
+            <span>By <a id="video-author-link" href="#" target="_blank" class="channel-link">Channel Name</a></span>
+          </div>
+          
+          <!-- Stats Bar -->
+          <div class="stats-bar">
+            <div class="stat-item">
+              <span class="stat-label">Duration</span>
+              <span id="video-stat-duration" class="stat-val">Not available</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Platform</span>
+              <span class="stat-val">YouTube API</span>
+            </div>
+          </div>
+          <div class="stats-note">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>For complete stats like views and likes, visit the video page.</span>
+          </div>
+
+          <!-- Video Actions -->
+          <div class="video-actions">
+            <a id="video-direct-link" href="#" target="_blank" class="btn-outline" style="background-color: var(--primary); color: white; border: none; flex: 1.5;">
+              <i class="fa-solid fa-up-right-from-square"></i> Open YouTube
+            </a>
+            <button id="copy-video-link-btn" class="btn-outline" title="Copy video link">
+              <i class="fa-solid fa-link"></i> Copy Link
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Thumbnail Suite & Description Hub -->
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        
+        <!-- ADSENSE_ZONE_AFTER_INFO -->
+        <div class="adsense-zone">
+          <a href="https://www.effectivecpmnetwork.com/dc0txqeg?key=c130cc04a60f3b3f0b9a6837fa4003c2" target="_blank" rel="noopener sponsored" class="banner-ad-card">
+            <span class="banner-ad-tag">ADVERTISEMENT</span>
+            <span class="banner-ad-subtitle">SPONSORED ADVERTISEMENT</span>
+            <span class="banner-ad-title">
+              PRO YOUTUBE THUMBNAIL CREATOR &amp; AI ENHANCER
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+        </div>
+
+        <!-- Thumbnail Downloader Suite -->
+        <section class="thumbnails-suite" aria-label="Available Thumbnails">
+          <h3 class="suite-title">
+            <i class="fa-solid fa-images"></i> Available Thumbnail Qualities
+          </h3>
+          <div id="thumbnails-grid" class="thumbnail-grid">
+            <!-- Dynamic thumbnails generated here -->
+          </div>
+        </section>
+
+        <!-- Description Viewer -->
+        <section class="description-section" aria-label="Video Description">
+          <div class="description-header">
+            <h3 class="description-title">
+              <i class="fa-solid fa-align-left"></i> Video Metadata Summary
+            </h3>
+            <button id="copy-description-btn" class="copy-desc-btn">
+              <i class="fa-solid fa-copy"></i> Copy Full Summary
+            </button>
+          </div>
+          <div id="description-box" class="description-box">
+            <!-- Full description fallback text -->
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- History Quick Access drawer -->
+    <section class="history-section" id="history-section">
+      <div class="history-header">
+        <h3 class="history-title">
+          <i class="fa-solid fa-clock-rotate-left"></i> Recent Analysis History
+        </h3>
+        <button id="clear-history-btn" class="clear-history-btn">
+          <i class="fa-solid fa-trash-can"></i> Clear History
+        </button>
+      </div>
+      <div id="history-grid" class="history-grid">
+        <!-- LocalStorage history items rendered here -->
+      </div>
+    </section>
+
+    <!-- ADSENSE_ZONE_BOTTOM -->
+    <div class="adsense-zone">
+      <a href="https://www.effectivecpmnetwork.com/dc0txqeg?key=c130cc04a60f3b3f0b9a6837fa4003c2" target="_blank" rel="noopener sponsored" class="banner-ad-card">
+        <span class="banner-ad-tag">ADVERTISEMENT</span>
+        <span class="banner-ad-subtitle">SPONSORED ADVERTISEMENT</span>
+        <span class="banner-ad-title">
+          PREMIUM HIGH-SPEED VIDEO METADATA &amp; ASSET SUITE
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Global Toast Notification UI -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom: 0.75rem;">
+            <div class="logo-icon"><i class="fa-solid fa-play"></i></div>
+            <span>TubeMeta</span>
+          </a>
+          <p>The premium, secure client-side utility for video metadata aggregation and ultra-high-definition thumbnail extraction.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Analyzer Tool</a></li>
+            <li><a href="about.html" class="footer-link">About TubeMeta</a></li>
+            <li><a href="blog/index.html" class="footer-link">Educational Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Legal &amp; Support</h4>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="about.html#contact" class="footer-link">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TubeMeta. All rights reserved. Not affiliated with YouTube or Google LLC.</p>
+        <p>100% Client-Side Metadata Reader</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

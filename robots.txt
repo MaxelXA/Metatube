@@ -1,0 +1,7 @@
+# Robots.txt for TubeMeta
+# Allows indexing of all pages and assets. We want full organic reach!
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tubemeta.netlify.app/sitemap.xml
